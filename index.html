@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Mother's Day 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#ffeef5;
+overflow:hidden;
+height:100vh;
+color:#5b2d42;
+}
+
+.page{
+position:absolute;
+width:100%;
+height:100vh;
+display:none;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:20px;
+overflow-y:auto;
+}
+
+.active{
+display:flex;
+}
+
+/* INTRO PAGE */
+
+#intro{
+background:linear-gradient(180deg,#ffd6e7,#fff0f6);
+position:relative;
+overflow:hidden;
+text-align:center;
+}
+
+.main-title{
+font-size:2.8rem;
+font-family:'Caveat',cursive;
+color:#ff3b7f;
+margin-bottom:25px;
+z-index:2;
+}
+
+.start-btn{
+padding:15px 28px;
+border:none;
+border-radius:50px;
+background:#ff4f8b;
+color:white;
+font-size:1.1rem;
+font-weight:600;
+cursor:pointer;
+box-shadow:0 8px 25px rgba(255,79,139,0.35);
+z-index:2;
+}
+
+.floating-heart{
+position:absolute;
+font-size:24px;
+animation:floatUp linear infinite;
+opacity:0.7;
+}
+
+@keyframes floatUp{
+
+0%{
+transform:translateY(100vh) scale(0.7);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-120vh) scale(1.4);
+opacity:0;
+}
+
+}
+
+/* INSTRUCTION PAGE */
+
+#instructionPage{
+background:linear-gradient(180deg,#fff0f6,#ffe4ee);
+text-align:center;
+}
+
+.instruction-card{
+width:100%;
+max-width:360px;
+background:white;
+padding:25px;
+border-radius:28px;
+box-shadow:0 10px 35px rgba(0,0,0,0.1);
+}
+
+.instruction-title{
+font-family:'Caveat',cursive;
+font-size:2.4rem;
+color:#ff4f8b;
+margin-bottom:20px;
+}
+
+.instruction-text{
+font-size:1rem;
+line-height:1.8;
+color:#6a4254;
+margin-bottom:25px;
+}
+
+/* SCRAPBOOK */
+
+.scrapbook-page{
+background:#fff8fb;
+justify-content:flex-start;
+padding-top:30px;
+}
+
+.page-number{
+margin-bottom:15px;
+color:#c06d92;
+}
+
+.scrapbook-card{
+width:100%;
+max-width:360px;
+background:white;
+padding:18px;
+border-radius:24px;
+box-shadow:0 10px 35px rgba(0,0,0,0.08);
+position:relative;
+}
+
+.polaroid{
+background:white;
+padding:12px 12px 55px;
+border-radius:16px;
+box-shadow:0 5px 15px rgba(0,0,0,0.12);
+position:relative;
+transform:rotate(-2deg);
+}
+
+.polaroid img{
+width:100%;
+height:300px;
+object-fit:cover;
+border-radius:12px;
+}
+
+.caption{
+position:absolute;
+bottom:14px;
+width:100%;
+text-align:center;
+font-family:'Caveat',cursive;
+font-size:1.5rem;
+color:#ff4f8b;
+}
+
+.hidden-heart{
+position:absolute;
+font-size:18px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.hidden-heart:active{
+transform:scale(1.4);
+}
+
+.message-box{
+margin-top:16px;
+padding:14px;
+background:#fff0f7;
+border-radius:16px;
+font-size:0.95rem;
+line-height:1.7;
+display:none;
+animation:fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:translateY(10px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+.next-btn{
+margin-top:18px;
+padding:12px 22px;
+border:none;
+border-radius:40px;
+background:#ff5f98;
+color:white;
+font-size:1rem;
+display:none;
+cursor:pointer;
+}
+
+/* WIN PAGE */
+
+#winPage{
+background:linear-gradient(180deg,#fff0f6,#ffe0ec);
+text-align:center;
+}
+
+.win-title{
+font-size:3rem;
+font-family:'Caveat',cursive;
+color:#ff3f83;
+margin-bottom:20px;
+}
+
+.prize-btn{
+padding:16px 30px;
+background:#ff4f8b;
+border:none;
+border-radius:50px;
+color:white;
+font-size:1.1rem;
+cursor:pointer;
+}
+
+/* FINAL PAGE */
+
+#finalPage{
+background:linear-gradient(180deg,#fff5f8,#ffe4ee);
+padding-top:40px;
+align-items:flex-start;
+overflow-y:auto;
+}
+
+.final-card{
+width:100%;
+max-width:380px;
+background:white;
+padding:24px;
+border-radius:28px;
+box-shadow:0 10px 40px rgba(0,0,0,0.1);
+margin:0 auto 30px auto;
+}
+
+.final-title{
+font-family:'Caveat',cursive;
+font-size:2.5rem;
+color:#ff4f8b;
+margin-bottom:20px;
+text-align:center;
+}
+
+.final-letter{
+font-size:1rem;
+line-height:1.9;
+color:#6a4254;
+margin-top:10px;
+}
+
+.family-photo{
+width:100%;
+border-radius:20px;
+margin-top:25px;
+}
+
+.big-heart{
+font-size:4rem;
+text-align:center;
+margin-top:20px;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+
+0%{transform:scale(1);}
+50%{transform:scale(1.1);}
+100%{transform:scale(1);}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+<source src="YOUR_BACKGROUND_SONG.mp3" type="audio/mp3">
+</audio>
+
+<audio id="letterMusic" loop>
+<source src="YOUR_FINAL_LETTER_SONG.mp3" type="audio/mp3">
+</audio>
+
+<audio id="clickSound">
+<source src="YOUR_CLICK_SOUND.mp3" type="audio/mp3">
+</audio>
+
+<!-- INTRO -->
+
+<section class="page active" id="intro">
+
+<h1 class="main-title">
+Happy Mother's Day Mumma 💖🌸
+</h1>
+
+<button class="start-btn" onclick="showInstructions()">
+Thank You Beta 🥺💌
+</button>
+
+</section>
+
+<!-- INSTRUCTION PAGE -->
+
+<section class="page" id="instructionPage">
+
+<div class="instruction-card">
+
+<h1 class="instruction-title">
+Before We Start ❤️
+</h1>
+
+<p class="instruction-text">
+
+Your mission is to find all the hearts and click on them 💌
+
+<br><br>
+
+Every heart hides a small message waiting just for you 🌸✨
+
+<br><br>
+
+Find all 10 hearts to unlock your final surprise 🎁💖
+
+</p>
+
+<button class="prize-btn" onclick="startScrapbook()">
+Ready! 🫶🏻
+</button>
+
+</div>
+
+</section>
+
+<div id="scrapbookContainer"></div>
+
+<!-- WIN PAGE -->
+
+<section class="page" id="winPage">
+
+<h1 class="win-title">
+You Won The Game Mumma 💖🏆
+</h1>
+
+<button class="prize-btn" onclick="showFinalPage()">
+Click To Get Your Prize 🎁
+</button>
+
+</section>
+
+<!-- FINAL PAGE -->
+
+<section class="page" id="finalPage">
+
+<div class="final-card">
+
+<h1 class="final-title">
+To My Safest Place 💖
+</h1>
+
+<p class="final-letter">
+
+I know there were times when it felt like I was distant, or like I didn’t love or miss you enough 🥺💔
+
+<br><br>
+
+But the truth is, I miss you more than words can explain 💖
+
+I just never knew how to express it properly 🌸
+
+<br><br>
+
+But not expressing love was never the same as not feeling it ❤️
+
+<br><br>
+
+You have always been the most important person in my life 🌎💖
+
+My safest place 🏡
+
+And my favorite person no matter how much I fail to say it out loud 🫶🏻
+
+<br><br>
+
+There are people we meet in life, and then there are people who become a part of our soul ✨
+
+For me, that will always be you 🌸
+
+</p>
+
+<img src="photo11.jpg" class="family-photo">
+
+<div class="big-heart">❤️</div>
+
+</div>
+
+</section>
+
+<script>
+
+const pages = [
+
+{
+img:'photo1.jpg',
+caption:'The Beginning Of My Life 🥺💖',
+message:'You gave me the greatest gift anyone ever could — life itself 🌸💖 You changed your whole world, your body, your sleep, your peace… just so I could exist 🫶🏻',
+heart:{top:'14%',left:'78%'}
+},
+
+{
+img:'photo2.jpg',
+caption:'My Biggest Comfort 🌷',
+message:'You took care of me in ways I probably never even noticed properly 💞',
+heart:{top:'68%',left:'16%'}
+},
+
+{
+img:'photo3.jpg',
+caption:'My Strongest Protector 👑',
+message:'You never let me down in front of others 🌸 Whether it was friends, teachers, you always stood beside me 🫶🏻',
+heart:{top:'22%',left:'8%'}
+},
+
+{
+img:'photo4.jpg',
+caption:'More Than Just A Mumma 💌',
+message:'You always tried to understand me like a friend before acting like a mother 🌙💖 ',
+heart:{top:'76%',left:'82%'}
+},
+
+{
+img:'photo5.jpg',
+caption:'The Quiet Kind Of Love 🌸',
+message:'You loved me loudly even when I loved quietly 🥺💞 Even when I stayed silent or distant… your love for me never became smaller ❤️',
+heart:{top:'42%',left:'88%'}
+},
+
+{
+img:'photo6.jpg',
+caption:'Your Presence Feels Like Home 🏡',
+message:'Your presence alone is enough to make me the happiest 💖✨ Sometimes I don’t realize how much I miss you🥺❤️',
+heart:{top:'10%',left:'18%'}
+},
+
+{
+img:'photo7.jpg',
+caption:'You are the cutest mumma ever🥺💞',
+message:'You are the cutest n best mom ever, I want you in all my janams',
+heart:{top:'72%',left:'54%'}
+},
+
+{
+img:'photo8.jpg',
+caption:'The Strongest Woman I Know ✨',
+message:'You are so strong that you took care of me all by yourself 👑💞',
+heart:{top:'30%',left:'76%'}
+},
+
+{
+img:'photo9.jpg',
+caption:'My Festival Of Lights 🪔',
+message:'You are the light of this family 🌎💖 Just your smile is enough to brighten my worlds ✨ A home without you never feels complete 🥺❤️',
+heart:{top:'82%',left:'24%'}
+},
+
+{
+img:'photo10.jpg',
+caption:'Busy mom',
+message:'Sometimes missing someone quietly becomes a habit 🌙❤️',
+heart:{top:'16%',left:'58%'}
+}
+
+];
+
+const scrapbookContainer = document.getElementById('scrapbookContainer');
+
+pages.forEach((page,index)=>{
+
+const section = document.createElement('section');
+
+section.className='page scrapbook-page';
+
+section.id=`page${index}`;
+
+section.innerHTML=`
+
+<div class="page-number">
+Memory ${index+1} / 10 💖
+</div>
+
+<div class="scrapbook-card">
+
+<div class="polaroid">
+
+<img src="${page.img}">
+
+<div class="caption">
+${page.caption}
+</div>
+
+<div class="hidden-heart"
+
+style="
+top:${page.heart.top};
+left:${page.heart.left};
+"
+
+onclick="findHeart(${index})">
+
+❤️
+
+</div>
+
+</div>
+
+<div class="message-box" id="message${index}">
+${page.message}
+</div>
+
+<button class="next-btn" id="next${index}" onclick="nextPage(${index})">
+Next Memory 💌
+</button>
+
+</div>
+
+`;
+
+scrapbookContainer.appendChild(section);
+
+});
+
+function showInstructions(){
+
+playClick();
+
+document.getElementById('intro').classList.remove('active');
+
+document.getElementById('instructionPage').classList.add('active');
+
+}
+
+function startScrapbook(){
+
+playClick();
+
+document.getElementById('bgMusic').play();
+
+document.getElementById('instructionPage').classList.remove('active');
+
+document.getElementById('page0').classList.add('active');
+
+}
+
+function findHeart(index){
+
+playClick();
+
+document.getElementById(`message${index}`).style.display='block';
+
+document.getElementById(`next${index}`).style.display='inline-block';
+
+}
+
+function nextPage(index){
+
+playClick();
+
+document.getElementById(`page${index}`).classList.remove('active');
+
+if(index + 1 < pages.length){
+
+document.getElementById(`page${index+1}`).classList.add('active');
+
+}
+
+else{
+
+document.getElementById('winPage').classList.add('active');
+
+}
+
+}
+
+function showFinalPage(){
+
+playClick();
+
+document.getElementById('winPage').classList.remove('active');
+
+document.getElementById('finalPage').classList.add('active');
+
+document.getElementById('bgMusic').pause();
+
+document.getElementById('letterMusic').play();
+
+}
+
+function playClick(){
+
+document.getElementById('clickSound').currentTime = 0;
+
+document.getElementById('clickSound').play();
+
+}
+
+/* FLOATING HEARTS */
+
+const intro = document.getElementById('intro');
+
+setInterval(()=>{
+
+const heart = document.createElement('div');
+
+heart.classList.add('floating-heart');
+
+heart.innerHTML=['💖','💕','💞','🌸'][Math.floor(Math.random()*4)];
+
+heart.style.left=Math.random()*100+'vw';
+
+heart.style.animationDuration=(Math.random()*4+4)+'s';
+
+heart.style.fontSize=(Math.random()*20+18)+'px';
+
+intro.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},8000);
+
+},300);
+
+</script>
+
+</body>
+</html>
